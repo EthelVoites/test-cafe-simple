@@ -22,7 +22,9 @@ Route::auth();
 
 Route::group(['middleware'=>'auth'],function(){
     Route::get('/home', 'HomeController@index');
-    Route::get('/buy/{item}','HomeController@getBuy');
+    Route::get('/buy/{item}', 'HomeController@getBuy')->middleware(['userpoint']);
     Route::get('backoffice','HomeController@getBackoffice');
+
+    Route::get('userpoints/{id}/add/{points}' , 'UserPointsController@add');
 });
 

@@ -27,4 +27,8 @@ class User extends Authenticatable {
     public function sales() {
         return $this->hasMany('App\Sale');
     }
+
+    public function point() {
+        return $this->hasOne('App\UserPoint');
+    }
 }

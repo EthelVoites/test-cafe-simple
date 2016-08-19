@@ -26,5 +26,15 @@ class Kernel extends ConsoleKernel
     {
         // $schedule->command('inspire')
         //          ->hourly();
+
+        // Monthly user point account update
+        // Calculate user point level based on number of points
+        $schedule->call(function(){
+            $rate = 5;
+            \DB::table('user_points')->update([
+               'level' => \DB::raw('round(points/' . $rate . ')'),
+               'points' => 0
+            ]);
+        })->monthly();
     }
 }
