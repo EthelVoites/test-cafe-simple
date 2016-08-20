@@ -29,6 +29,6 @@ class User extends Authenticatable {
     }
 
     public function point() {
-        return $this->hasOne('App\UserPoint');
+        return $this->hasOne('Gwab\Userpoints\UserPoint');
     }
 }

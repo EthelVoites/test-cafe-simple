@@ -5,10 +5,9 @@
  *
  */
 
-namespace App\Http\Controllers;
+namespace Gwab\Userpoints; //App\Http\Controllers;
 
 use App\User;
-use App\UserPoint;
 use App\Http\Controllers\Controller;
 
 class UserPointsController extends Controller

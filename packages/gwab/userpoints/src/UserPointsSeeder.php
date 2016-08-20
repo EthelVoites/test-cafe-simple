@@ -4,8 +4,9 @@
  * Generate userpoint record for each user.
  */
 
+namespace Gwab\Userpoints;
+
 use App\User;
-use App\UserPoint;
 use Database\Seeds\DatabaseSeeder;
 
 use Illuminate\Database\Seeder;

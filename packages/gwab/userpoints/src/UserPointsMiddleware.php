@@ -9,9 +9,8 @@
  * Route::get('/buy/{item}', 'HomeController@getBuy')->middleware(['userpoint']);
 */
 
-namespace App\Http\Middleware;
+namespace Gwab\Userpoints;
 
-use App\UserPoint;
 use Closure;
 
 class UserPointsMiddleware

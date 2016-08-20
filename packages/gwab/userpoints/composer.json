@@ -1,0 +1,12 @@
+{
+    "name": "gwab/userpoints",
+    "description": "User point system",
+    "authors": [
+        {
+            "name": "Sander",
+            "email": "sander@example.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}

@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace Gwab\Userpoints;
 
 use Illuminate\Database\Eloquent\Model;
 

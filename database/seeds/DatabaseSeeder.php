@@ -58,7 +58,5 @@ class DatabaseSeeder extends Seeder {
                 Sale::create(['user_id' => $dracula->id, 'item_id' => $items->random()->id, 'sale_time' => $saleDay]);
             }
         }
-
-        $this->call(UserPointsSeeder::class);
     }
 }
