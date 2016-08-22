@@ -1,0 +1,17 @@
+{
+    "name": "gwab/userpoints",
+    "description": "User point system",
+    "authors": [
+        {
+            "name": "Sander",
+            "email": "sander@example.com"
+        }
+    ],
+    "autoload": {
+        "classmap": [
+            "src/database/seeds"
+        ]
+    },
+    "minimum-stability": "dev",
+    "require": {}
+}
