@@ -153,7 +153,7 @@ return [
         /*
          * Package Service Providers...
          */
-
+        Gwab\Userpoints\UserPointsServiceProvider::class,
 
         /*
          * Application Service Providers...
