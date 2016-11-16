@@ -54,7 +54,7 @@
         <div class="collapse navbar-collapse" id="app-navbar-collapse">
             <!-- Left Side Of Navbar -->
             <ul class="nav navbar-nav navbar-left">
-                <li><a disabled="disabled" class="disabled" href="/books">Raamatuklubi - tulemas</a></li>
+                <li><a disabled="disabled" class="disabled" href="/books">Book club - not yet available</a></li>
             </ul>
             <!-- Right Side Of Navbar -->
             <ul class="nav navbar-nav navbar-right">

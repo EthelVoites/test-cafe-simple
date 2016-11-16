@@ -21,9 +21,9 @@ class DatabaseSeeder extends Seeder {
                                  'password' => bcrypt('marimari'),
                              ]);
         $jyri = User::create([
-                                 'name'     => 'Jüri',
-                                 'email'    => 'jyri@example.com',
-                                 'password' => bcrypt('jyrijyri'),
+                                 'name'     => 'Jurgis',
+                                 'email'    => 'jurgis@example.com',
+                                 'password' => bcrypt('jurgisjurgis'),
                              ]);
         $dracula = User::create([
                                     'name'     => 'Dracula',
@@ -33,9 +33,9 @@ class DatabaseSeeder extends Seeder {
 
         $items = new Collection(
             [
-                Item::create(['name' => 'kohv', 'base_price' => '5']),
-                Item::create(['name' => 'tee', 'base_price' => '2.5']),
-                Item::create(['name' => 'kakao', 'base_price' => '3']),
+                Item::create(['name' => 'coffee', 'base_price' => '5']),
+                Item::create(['name' => 'tea', 'base_price' => '2.5']),
+                Item::create(['name' => 'cocoa', 'base_price' => '3']),
             ]);
 
         $saleDay = Carbon::now()->subMonths(6);

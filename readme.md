@@ -1,44 +1,47 @@
-# Kirjeldus
+# Description
 
-Meil on kohvik, kus inimesed saavad osta endale meelepärase joogi. Et motiveerida inimesi kohvikusse tihedamini sisse astuma, tahame juurutada uut boonussüsteemi. Klient saab oma tegevuste eest meie kohvikus/saidil punkte ja saab vastavalt oma eelmise kuu tegevustele selleks kuuks mingi taseme, mis võiks siis näiteks soodustusi pakkuda vmt. Antud hetkel on nendeks tegevusteks ainult ostud, aga kaalume ka sisselogimiste või siis näiteks kuu aja pärast lisanduva raamatulaenutusklubi tegevuses osalemise eest punkte anda.
+We have a cafe where people can buy some drinks. To motivate people to return to the cafe we want to implement a new loyalty program. A client will get points for their actions in our cafe(site) and will gain a "level" based on their actions last month that will enable discounts and such. At the moment these actions will only be purchases but we might add more in the future (say, points for logging in or for participating in the book club that we will open soon).
+## Task
 
-## Ülesanne
-
-Tuleb luua punktisüsteem:
-* juba olemas olevad eelmiste kuude tegevused peavad punktideks muutuma
-    * praegu anname punkte ainult ostude eest, näiteks nii
-      * 1 ost = 1 punkt
-      * iga 5. punkt tõstab kliendi taset 1 võrra
-* iga kuu peab kasutajal olema õige tase vastavalt tema eelmise kuu punktidele
-* punktisüsteem peaks olema iseseisev moodul
-    * olemasolevat koodi võimalikult vähe muuta 
-    * uute punkte lisavate tegevuste lisamine peab olema lihtne
-    * kasutata võib ja on soovitav Laraveli võimalusi ja tavasid, et seda eristatust saavutada
+You need to implement a point system:
+* already existing purchases from previous months have to be converted to points 
+    * at the moment we are giving points just for purchases, for example
+      * 1 purchase = 1 point
+      * 5 points = 1 new level
+* the clients should get the right level each month according to the points earned last month
+* the loyalty program should be a separate module
+    * as few changes as possible to existing code
+    * adding new actions for gaining points has to be easy
+    * you can and it is recommended to use the best practices and possibilities in Laravel
     
-* kohvikuomanikule eraldi vaade, kust 
-   * ta saaks näha klientide praeguseid punktisummasid, hetkel kehtivat taset
-   * klientidele punkte käsitsi juurde lisada. 
-   * turvamise ja õiguste pärast pole hetkel vaja muretseda
-* kliendile võimalus näha oma hetke taset
+* a separate view for the cafe manager to 
+   * see the point the clients currently have and their current level
+   * add points manually 
+   * no need to worry about security and rights at this point
+* a client should be able to see their current level
 
-* dokumentatsiooni/kommentaare/seletusi hinnatakse kõrgelt :)
+* documentation/comments/explanations will be much appreciated :)
 
-## Kohviku töölepanemise instruktsioonid
+## How to run the cafe
 
 1. git clone 
-2. kopeeri .env.example fail ja nimeta .env-iks
-3. jooksuta käske
+2. copy .env.example and rename to .env
+3. run these commands
 ```
  composer install
  composer dump-autoload
  php artisan key:generate
  ``` 
-4. localhostis näitamiseks näiteks:
- ```
- php artisan serve
- ```
-5. kui on vaja andmebaasi uuesti luua, siis
+
+4. For generating and rebuilding the database: 
+
+   check that you have a plain file database.sqlite in /database folder
 ```
  php artisan migrate:refresh
  php artisan db:seed
  ```
+ 
+ 5. To show in localhost:
+  ```
+  php artisan serve
+  ```
