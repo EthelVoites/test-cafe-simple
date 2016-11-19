@@ -2,5 +2,6 @@
 
 return [
     'modules' => [
+        'LoyaltyProgram'
     ],
 ];
