@@ -28,6 +28,11 @@ class ModulesServiceProvider extends \Illuminate\Support\ServiceProvider
                 include __DIR__.'/'.$module.'/routes.php';
             }
 
+            // Load the services for each of the modules 
+            if (file_exists(__DIR__.'/'.$module.'/services.php')) {
+                include __DIR__.'/'.$module.'/services.php';
+            }
+
             // Load the views
             if (is_dir(__DIR__.'/'.$module.'/Views')) {
                 $this->loadViewsFrom(__DIR__.'/'.$module.'/Views', $module);
