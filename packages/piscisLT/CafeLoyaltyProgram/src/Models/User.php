@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Modules\LoyaltyProgram\Models;
+namespace piscisLT\CafeLoyaltyProgram\Models;
 
 use Illuminate\Database\Eloquent\Collection;
 
 /**
  * Class User
- * @package App\Modules\LoyaltyProgram\Models
+ * @package piscisLT\CafeLoyaltyProgram\Models
  * @author  David Gegelija <code@imdavid.xyz>
  *
  * @property Carbon      $created_at
@@ -19,12 +19,12 @@ class User extends \App\User
 {
     public function loyalty()
     {
-        return $this->hasOne('App\Modules\LoyaltyProgram\Models\UserLoyalty');
+        return $this->hasOne('piscisLT\CafeLoyaltyProgram\Models\UserLoyalty');
     }
 
     public function loyaltyLog()
     {
-        return $this->hasMany('App\Modules\LoyaltyProgram\Models\LoyaltyLog');
+        return $this->hasMany('piscisLT\CafeLoyaltyProgram\Models\LoyaltyLog');
     }
 
     public function loyaltyOrNew()

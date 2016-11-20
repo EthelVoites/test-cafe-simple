@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Modules\LoyaltyProgram\Models;
+namespace piscisLT\CafeLoyaltyProgram\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
 /**
  * Class UserLoyalty
- * @package App\Modules\LoyaltyProgram\Models
+ * @package piscisLT\CafeLoyaltyProgram\Models
  * @author  David Gegelija <code@imdavid.xyz>
  *
  * @property integer id
@@ -33,7 +33,7 @@ class UserLoyalty extends Model
 
     public function user()
     {
-        return $this->belongsTo('App\Modules\LoyaltyProgram\Models\User');
+        return $this->belongsTo('piscisLT\CafeLoyaltyProgram\Models\User');
     }
 
     public function recountAll()

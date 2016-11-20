@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Modules\LoyaltyProgram\Controllers;
+namespace piscisLT\CafeLoyaltyProgram\Controllers;
 
+use piscisLT\CafeLoyaltyProgram\Models\LoyaltyLog;
+use piscisLT\CafeLoyaltyProgram\Models\User;
 use App\Http\Controllers\Controller;
-use App\Modules\LoyaltyProgram\Models\LoyaltyLog;
-use App\Modules\LoyaltyProgram\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Input;
@@ -14,14 +14,18 @@ use Illuminate\Support\Facades\View;
 
 /**
  * Class LoyaltyController
- * @package App\Modules\LoyaltyProgram\Controllers
+ * @package piscisLT\CafeLoyaltyProgram\Controllers
  * @author  David Gegelija <code@imdavid.xyz>
  */
 class LoyaltyController extends Controller
 {
     public function __construct()
     {
-        View::share('loyaltyMenu', $this->menu());
+        $this->middleware(function ($request, $next) {
+            View::share('loyaltyMenu', $this->menu());
+
+            return $next($request);
+        });
     }
 
     private function menu()
@@ -50,7 +54,7 @@ class LoyaltyController extends Controller
     {
         $users = User::all();
 
-        return view('LoyaltyProgram::list', compact('users'));
+        return view('loyalty_program::list', compact('users'));
     }
 
     public function addPoints($userId, Request $request)
@@ -79,6 +83,6 @@ class LoyaltyController extends Controller
         $userId = $userId ? $userId : Auth::user()->id;
         $user   = User::findOrFail($userId);
 
-        return view('LoyaltyProgram::log', compact('user'));
+        return view('loyalty_program::log', compact('user'));
     }
 }

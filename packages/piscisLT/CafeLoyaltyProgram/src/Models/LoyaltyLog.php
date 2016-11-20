@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Modules\LoyaltyProgram\Models;
+namespace piscisLT\CafeLoyaltyProgram\Models;
 
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 
 /**
  * Class LoyaltyLog
- * @package App\Modules\LoyaltyProgram\Models
+ * @package piscisLT\CafeLoyaltyProgram\Models
  * @author  David Gegelija <code@imdavid.xyz>
  *
  * @property integer $user_id
@@ -32,7 +32,7 @@ class LoyaltyLog extends Model
 
     public function user()
     {
-        return $this->belongsTo('App\Modules\LoyaltyProgram\Models\User');
+        return $this->belongsTo('piscisLT\CafeLoyaltyProgram\Models\User');
     }
 
     public function recountUserPoints()

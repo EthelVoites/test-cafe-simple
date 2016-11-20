@@ -1,4 +1,4 @@
-@extends('LoyaltyProgram::layout')
+@extends('loyalty_program::layout')
 
 @section('subcontent')
 
