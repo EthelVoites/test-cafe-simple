@@ -54,17 +54,33 @@ class UserLoyalty extends Model
         $this->save();
     }
 
+    /**
+     * Count points earned this month
+     * 
+     * @return int
+     */
     public function countPoints()
     {
         $startingFrom = date('Y-m-d 00:00:00', strtotime('first day of this month'));
         return $this->user->loyaltyLog->where('created_at', '>=', $startingFrom)->sum('points');
     }
-    
+
+    /**
+     * Count points earned during whole membership
+     * 
+     * @return int
+     */
     public function countAllPoints()
     {
         return $this->user->loyaltyLog->sum('points');
     }
 
+    /**
+     * Count user level
+     * @param bool $skipCurrentMonth
+     *
+     * @return int
+     */
     public function countLevel($skipCurrentMonth = false)
     {
         $level         = 0;

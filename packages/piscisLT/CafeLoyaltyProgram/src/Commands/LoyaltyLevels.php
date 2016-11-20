@@ -36,7 +36,6 @@ class LoyaltyLevels extends Command
 
         /** @var User $user */
         foreach ($users as $user) {
-            sleep(1);
             $user->loyaltyOrNew()->recountLevel(true);
             $this->output->progressAdvance();
         }

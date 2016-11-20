@@ -3,6 +3,7 @@
 namespace piscisLT\CafeLoyaltyProgram;
 
 use App\Sale;
+use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Support\ServiceProvider;
 use piscisLT\CafeLoyaltyProgram\Commands\LoyaltyLevels;
 use piscisLT\CafeLoyaltyProgram\Models\LoyaltyLog;
@@ -25,6 +26,7 @@ class CafeLoyaltyProgramServiceProvider extends ServiceProvider
         $this->registerDefaults();
         $this->registerEvents();
         $this->registerCommands();
+        $this->registerSchedules();
     }
 
     public function registerDefaults()
@@ -66,6 +68,15 @@ class CafeLoyaltyProgramServiceProvider extends ServiceProvider
 
         LoyaltyLog::created(function (LoyaltyLog $item) {
             $item->recountUserPoints();
+        });
+    }
+
+    public function registerSchedules()
+    {
+        $this->app->booted(function () {
+            $schedule = $this->app->make(Schedule::class);
+            
+            $schedule->command('loyalty:levels')->cron('0 0 1 * *');
         });
     }
 }

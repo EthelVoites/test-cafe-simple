@@ -35,6 +35,9 @@ class LoyaltyLog extends Model
         return $this->belongsTo('piscisLT\CafeLoyaltyProgram\Models\User');
     }
 
+    /**
+     * @used-by CafeLoyaltyProgramServiceProvider::registerEvents
+     */
     public function recountUserPoints()
     {
         $this->user->loyaltyOrNew()->recountPoints();
