@@ -4,7 +4,9 @@ namespace piscisLT\CafeLoyaltyProgram;
 
 use App\Sale;
 use Illuminate\Support\ServiceProvider;
+use piscisLT\CafeLoyaltyProgram\Commands\LoyaltyLevels;
 use piscisLT\CafeLoyaltyProgram\Models\LoyaltyLog;
+use piscisLT\CafeLoyaltyProgram\Commands\LoyaltySales;
 
 class CafeLoyaltyProgramServiceProvider extends ServiceProvider
 {
@@ -42,7 +44,10 @@ class CafeLoyaltyProgramServiceProvider extends ServiceProvider
     public function registerCommands()
     {
         if ($this->app->runningInConsole()) {
-//            $this->commands();
+            $this->commands(
+                LoyaltySales::class,
+                LoyaltyLevels::class
+            );
         }
     }
 

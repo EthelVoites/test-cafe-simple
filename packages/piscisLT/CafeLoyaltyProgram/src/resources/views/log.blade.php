@@ -24,8 +24,12 @@
                 @endforeach
             @endif
             <tr>
-                <td colspan="3" class="text-right"><strong>Points:</strong></td>
+                <td colspan="3" class="text-right"><strong>This month points:</strong></td>
                 <td>{{$user->loyaltyOrNew()->points}}</td>
+            </tr>
+            <tr>
+                <td colspan="3" class="text-right"><strong>All time points:</strong></td>
+                <td>{{$user->loyaltyOrNew()->countAllPoints()}}</td>
             </tr>
             <tr>
                 <td colspan="3" class="text-right"><strong>Current level:</strong></td>
