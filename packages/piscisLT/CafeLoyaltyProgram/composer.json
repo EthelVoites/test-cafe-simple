@@ -1,0 +1,15 @@
+{
+    "name": "piscis-lt/cafe-loyalty-program",
+    "description": "Loyalty program add on for text-cafe app",
+    "type": "library",
+    "require": {
+        "laravel/laravel": "^5.3"
+    },
+    "license": "proprietary",
+    "authors": [
+        {
+            "name": "David Gegelija",
+            "email": "code@imdavid.xyz"
+        }
+    ]
+}

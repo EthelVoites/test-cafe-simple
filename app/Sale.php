@@ -9,10 +9,10 @@ class Sale extends Model {
     public $timestamps = false;
 
     public function user() {
-        $this->belongsTo('App\User');
+        return $this->belongsTo('App\User');
     }
 
     public function item() {
-        $this->belongsTo('App\Item');
+        return $this->belongsTo('App\Item');
     }
 }
